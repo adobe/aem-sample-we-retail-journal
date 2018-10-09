@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/adobe/aem-sample-we-retail-journal.svg?style=svg)](https://circleci.com/gh/adobe/aem-sample-we-retail-journal)
+[![CircleCI](https://circleci.com/gh/adobe/aem-sample-we-retail-journal/tree/master.svg?style=svg)](https://circleci.com/gh/adobe/aem-sample-we-retail-journal/tree/master)
 
 # We.Retail Journal Single Page Applications
 
