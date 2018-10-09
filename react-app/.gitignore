@@ -1,0 +1,30 @@
+target
+.env*.local
+.npmrc
+.chrome
+.idea
+*.iml
+.DS_Store
+/build
+/node
+/temp
+/dist
+/node
+
+# dependency directories
+node_modules/
+jspm_packages/
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# npm cache directory
+.npm
+
+# jsdoc
+out/
+
+# code coverage
+coverage/

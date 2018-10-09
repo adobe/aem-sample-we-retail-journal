@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+      jcr:primaryType="cq:Component"
+      sling:resourceSuperType="core/wcm/components/text/v2/text"
+      jcr:title="We.Retail Journal Text"
+      jcr:description="Rich Text Component for We.Retail Journal"
+      cq:icon="textLeft"
+      componentGroup="We.Retail Journal"/>

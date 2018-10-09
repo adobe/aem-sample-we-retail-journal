@@ -1,0 +1,66 @@
+{
+    "react": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy"  : "admin",
+        "jcr:created"    : "Wed Jan 20 2016 10:29:36 GMT+0100",
+        "jcr:content"    : {
+            "cq:conf"           : "/conf/coretest",
+            "cq:lastModifiedBy" : "admin",
+            "cq:lastModified"   : "Wed Jan 20 2016 10:33:36 GMT+0100",
+            "cq:deviceGroups"   : [
+                "/etc/mobile/groups/responsive"
+            ],
+            "cq:template"       : "/conf/coretest/settings/wcm/templates/rootpagetemplate",
+            "jcr:created"       : "Wed Jan 20 2016 10:29:36 GMT+0100",
+            "jcr:createdBy"     : "admin",
+            "jcr:description"   : "Description",
+            "jcr:language"      : "en_GB",
+            "jcr:primaryType"   : "cq:PageContent",
+            "jcr:title"         : "Templated Page",
+            "sling:resourceType": "unittest/components/rootpage",
+            "root": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                "text"              : {
+                    "jcr:primaryType"   : "nt:unstructured",
+                    "jcr:createdBy"     : "admin",
+                    "jcr:lastModifiedBy": "admin",
+                    "jcr:created"       : "Mon Jan 18 2016 16:59:33 GMT+0100",
+                    "text"              : "<p>This is a test</p>",
+                    "jcr:lastModified"  : "Mon Jan 18 2016 16:59:43 GMT+0100",
+                    "sling:resourceType": "core/wcm/components/text/v1/text",
+                    "textIsRich"        : "true"
+                }
+            }
+        },
+        "child": {
+            "jcr:primaryType": "cq:Page",
+            "jcr:content"    : {
+                "jcr:primaryType": "cq:PageContent",
+                "sling:resourceType": "unittest/components/page"
+            },
+            "nested1": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:content"    : {
+                    "jcr:primaryType": "cq:PageContent",
+                    "sling:resourceType": "unittest/components/page",
+                    "root": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid"
+                    }
+                }
+            },
+            "nested2": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:content"    : {
+                    "jcr:primaryType": "cq:PageContent",
+                    "sling:resourceType": "unittest/components/page",
+                    "root": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid"
+                    }
+                }
+            }
+        }
+    }
+}

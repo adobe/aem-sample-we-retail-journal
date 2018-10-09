@@ -1,0 +1,6 @@
+<ul [class]="menuClass">
+  <li *ngFor="let node of data">
+    <a class="nav-item"  routerLink="{{ node.url }}" routerLinkActive="active">{{node.title}}</a>
+    <app-menu *ngIf="node.children && node.children.length" [data]="node.children"></app-menu>
+  </li>
+</ul>

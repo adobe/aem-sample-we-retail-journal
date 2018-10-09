@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:lastModified="{Date}2018-02-08T14:22:08.947+01:00"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[mix:lockable]"
+    jcr:primaryType="sling:OrderedFolder"
+    jcr:title="We.Retail Journal"/>

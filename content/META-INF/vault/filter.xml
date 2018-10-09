@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/we-retail-journal"/>
+    <filter root="/conf/we-retail-journal"/>
+    <filter root="/content/we-retail-journal"/>
+    <filter root="/content/dam/we-retail-journal"/>
+</workspaceFilter>

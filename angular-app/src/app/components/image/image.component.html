@@ -1,0 +1,8 @@
+<ng-template *ngIf="link; else imgBlock">
+  <a [href]="link" data-title={{ title || alt }} data-asset={{ fileReference }}>
+    <img *ngIf="src" [id]="itemName" [src]="src" [alt]="alt" [title]="displayPopupTitle && title"/>
+  </a>
+</ng-template>
+<ng-template #imgBlock>
+  <img *ngIf="src" [id]="itemName" [src]="src" [alt]="alt" [title]="displayPopupTitle && title"/>
+</ng-template>
