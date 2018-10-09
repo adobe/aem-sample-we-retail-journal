@@ -23,7 +23,11 @@ describe('MainContentComponent', () => {
   }));
 
   beforeEach(() => {
-    ModelManager.initialize();
+    // Stub ModelManager
+    spyOn(ModelManager, "getData").and.callFake(function() {
+      return Promise.resolve({});
+    });
+
     fixture = TestBed.createComponent(MainContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
