@@ -1,0 +1,2 @@
+<weather-widget  *ngIf="apiKey; else elseBlock" [settings]="settings" [currentWeather]="currentWeather" [forecast]="forecast"></weather-widget>
+<ng-template #elseBlock><div class="weather-error">No api key defined! Weather data cannot be retrieved</div></ng-template>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+      jcr:primaryType="cq:Component"
+      sling:resourceSuperType="core/wcm/components/image/v2/image"
+      jcr:title="We.Retail Journal Image"
+      jcr:description="Smart Adaptive Image for We.Retail Journal"
+      cq:icon="image"
+      componentGroup="We.Retail Journal">
+    <cq:editConfig jcr:primaryType="cq:EditConfig">
+    <cq:dropTargets jcr:primaryType="nt:unstructured">
+        <image
+            jcr:primaryType="cq:DropTargetConfig"
+            accept="[image/.*]"
+            groups="[media]"
+            propertyName="./fileReference">
+            <parameters
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="we-retail-journal/components/image"
+                imageCrop=""
+                imageMap=""
+                imageRotate=""/>
+        </image>
+    </cq:dropTargets>
+    </cq:editConfig>
+</jcr:root>

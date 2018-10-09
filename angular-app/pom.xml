@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2018 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ====================================================================== -->
+  <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
+  <!-- ====================================================================== -->
+  <parent>
+    <groupId>com.adobe.cq.sample.spa</groupId>
+    <artifactId>we-retail-journal</artifactId>
+    <version>1.1.1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <!-- ====================================================================== -->
+  <!-- P R O J E C T  D E S C R I P T I O N                                   -->
+  <!-- ====================================================================== -->
+  <artifactId>we-retail-journal-angular-app</artifactId>
+  <packaging>jar</packaging>
+  <version>1.1.1-SNAPSHOT</version>
+
+  <name>We.Retail Journal Angular App</name>
+  <description>Angular App for the We.Retail Journal</description>
+
+  <!-- ====================================================================== -->
+  <!-- S C M  D E F I N I T I O N                                             -->
+  <!-- ====================================================================== -->
+  <scm>
+    <connection>scm:git:https://github.com/adobe/aem-sample-we-retail-journal.git</connection>
+    <developerConnection>scm:git:git@github.com:adobe/aem-sample-we-retail-journal.git</developerConnection>
+    <url>https://github.com/adobe/aem-sample-we-retail-journal/tree/master/angulal-app</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
+    <node.version>v8.10.0</node.version>
+    <npm.version>5.6.0</npm.version>
+    <build.environment />
+  </properties>
+
+  <!-- ====================================================================== -->
+  <!-- B U I L D   D E F I N I T I O N                                        -->
+  <!-- ====================================================================== -->
+  <build>
+    <plugins>
+      <!-- Run NPM to generate the client library -->
+
+      <!-- ====================================================================== -->
+      <!-- Frontend Maven Plugin                                                  -->
+      <!-- ====================================================================== -->
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>${frontend-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>${node.version}</nodeVersion>
+              <npmVersion>${npm.version}</npmVersion>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm install</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>install</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm run build</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run build${build.environment}</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>src/**/*</include>
+          </includes>
+          <excludes combine.children="append">
+            <exclude>**/*.html</exclude>
+            <exclude>src/fonts.css</exclude>
+            <exclude>src/index.html</exclude>
+            <exclude>src/favicon.ico</exclude>
+            <exclude>src/browserslist</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!-- Profile to run locally -->
+    <profile>
+      <id>local</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>${frontend-maven-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>npm run test</id>
+                <phase>test</phase>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <configuration>
+                  <arguments>run test</arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- Profile to run on Jenkins and performRelease -->
+    <!-- will install NodeJs/Npm and run the JS Tests -->
+    <profile>
+      <id>ci</id>
+      <activation>
+        <property>
+          <name>env.ENV_CI</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>${frontend-maven-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>execute tests</id>
+                <phase>test</phase>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <configuration>
+                  <arguments>run test:ci</arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <!--<profiles>
+      <profile>
+          <id>npmLinkDeps</id>
+          <activation>
+              <activeByDefault>false</activeByDefault>
+          </activation>
+          <build>
+              <plugins>
+                  &lt;!&ndash; Run NPM to generate the client library &ndash;&gt;
+                  <plugin>
+                      <groupId>org.codehaus.mojo</groupId>
+                      <artifactId>exec-maven-plugin</artifactId>
+                      <version>1.6.0</version>
+                      <executions>
+                          <execution>
+                              <id>npm install</id>
+                              <goals>
+                                  <goal>exec</goal>
+                              </goals>
+                              <phase>initialize</phase>
+                              <configuration>
+                                  <arguments>
+                                      <argument>run</argument>
+                                      <argument>install:link-deps</argument>
+                                  </arguments>
+                              </configuration>
+                          </execution>
+                          <execution>
+                              <id>npm run build</id>
+                              <goals>
+                                  <goal>exec</goal>
+                              </goals>
+                              <phase>generate-resources</phase>
+                              <configuration>
+                                  <executable>npm</executable>
+                                  <arguments>
+                                      <argument>run</argument>
+                                      <argument>build</argument>
+                                  </arguments>
+                              </configuration>
+                          </execution>
+                      </executions>
+                  </plugin>
+
+                  <plugin>
+                      <groupId>org.apache.rat</groupId>
+                      <artifactId>apache-rat-plugin</artifactId>
+                      <configuration>
+                          <includes>
+                              <include>src/**/*</include>
+                          </includes>
+                          <excludes combine.children="append">
+                              &lt;!&ndash; exclude typekit fonts &ndash;&gt;
+                              <exclude>src/fonts.css</exclude>
+                          </excludes>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+  </profiles>-->
+</project>

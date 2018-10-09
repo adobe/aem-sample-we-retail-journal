@@ -1,0 +1,49 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ~ Copyright 2018 Adobe Systems Incorporated
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~     http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+ .rw-box {
+    float: right;
+    z-index: 50;
+    margin: 60px 3vw 0 0;
+}
+
+.rw-box h2 {
+    color: #fff !important;
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+
+.rw-today {
+    color: #fff;
+}
+
+@media (max-width: 650px) {
+    .rw-box h2 {
+        font-size: 4vw;
+    }
+
+    .rw-today {
+        font-size: 2vw;
+    }
+}
+
+.aem-Grid.aem-Grid--default--12 > .weather-error.aem-GridColumn.aem-GridColumn--default--12 {
+  border-radius: 3px;
+  padding: 20px;
+  background: transparent;
+  border:solid 2px rgba(255, 0, 0, 0.5);
+  color: #fff;
+  width:200px;
+}
