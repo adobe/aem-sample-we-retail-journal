@@ -3,9 +3,9 @@
 Contains We.Retail Journal SPAs for authoring on AEM.
 
 ## Version
-This is the **master** branch, which contains latest release.
+This is the **development** branch, which contains latest work in progress.
 
-Go to [development](../../tree/development) branch for the state of most recent work.
+Go to [master](../../tree/master) branch for the state of last released artifacts.
 
 ## Modules
 
