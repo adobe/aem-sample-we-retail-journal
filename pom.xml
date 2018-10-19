@@ -23,7 +23,7 @@
     <groupId>com.adobe.cq.sample.spa</groupId>
     <artifactId>we-retail-journal</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.3-SNAPSHOT</version>
 
     <name>We.Retail Journal Reactor</name>
     <description>Reactor POM for We.Retail Journal</description>
