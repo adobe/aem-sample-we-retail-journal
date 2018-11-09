@@ -4,10 +4,10 @@
 
 Contains We.Retail Journal SPAs for authoring on AEM.
 
-## Version
-This is the **master** branch, which contains latest release.
+## Workflows
+The current repository follows the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) branching model design.
 
-Go to [development](../../tree/development) branch for the state of most recent work.
+Go to the [development](../../tree/development) branch to access the latest state of the project.
 
 ## Modules
 
