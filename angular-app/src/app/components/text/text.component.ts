@@ -21,7 +21,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   selector: 'app-text',
   host: {
     '[id]': 'itemName',
-    '[innerHtml]': "content"
+    '[innerHtml]': "content",
+    'data-rte-editelement': "true"
   },
   styleUrls:['./text.component.css'],
   template: ''

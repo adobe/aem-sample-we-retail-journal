@@ -39,7 +39,7 @@ const TextEditConfig = {
 class Text extends Component {
 
     get richTextContent() {
-        return <div id={extractModelId(this.props.cqPath)} dangerouslySetInnerHTML={{__html:  this.props.text}}/>;
+        return <div id={extractModelId(this.props.cqPath)} data-rte-editelement dangerouslySetInnerHTML={{__html:  this.props.text}}/>;
     }
 
     get textContent() {
