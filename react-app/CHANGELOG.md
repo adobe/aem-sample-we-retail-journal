@@ -3,4 +3,4 @@
 Public release, which provides:
  * Inline editing of Text component breaks SPA state update
  * Improve documentation
- * Update nodemon, nodejs, npm, com.fasterxml.jackson.core and core.wcm.components dependencies
+ * Update nodemon, nodejs, npm dependencies
