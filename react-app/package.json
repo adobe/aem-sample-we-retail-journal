@@ -1,6 +1,6 @@
 {
   "name": "react-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "scripts": {
     "install:link-deps": "npm install && npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && cd node_modules/@adobe/cq-react-editable-components && npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && cd -",
