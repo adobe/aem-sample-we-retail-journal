@@ -17,7 +17,10 @@
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server",
     "build:client-and-server-bundles": "ng build --build-optimizer=false && ng run angular-app:server",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "preversion": "npm run test && npm run build:production",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [],
   "author": "",
