@@ -8,7 +8,7 @@
         cq:template="/conf/we-retail-journal/angular/settings/wcm/templates/we-retail-angular-app-template"
         cq:redirectTarget="/content/we-retail-journal/angular/en/home"
         jcr:primaryType="cq:PageContent"
-        jcr:title="We.Retail Journal"
+        jcr:title="We.Retail Journal (English)"
         sling:resourceType="we-retail-journal/angular/components/structure/app">
         <root
             jcr:primaryType="nt:unstructured"
@@ -17,4 +17,6 @@
             <file/>
         </image>
     </jcr:content>
+    <home/>
+    <blog/>
 </jcr:root>
