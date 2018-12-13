@@ -57,7 +57,7 @@
                             clientlibs="[wcm.foundation.components.page.responsive]"
                             isRoot="{Boolean}true"
                             structureDepth="3"
-                            structurePatterns="(react\/)(?:(?!blog\/weather)(\/)?)"/>
+                            structurePatterns="(react\/en\/)(?:(?!blog\/weather)(\/)?)"/>
                     </app>
                 </structure>
             </components>

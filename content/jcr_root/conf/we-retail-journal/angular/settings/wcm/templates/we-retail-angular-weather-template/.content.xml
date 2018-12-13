@@ -5,6 +5,6 @@
         cq:lastModified="{Date}2017-12-07T17:08:28.689+05:30"
         cq:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
-        jcr:title="We.Retail Journal (Angular)"
+        jcr:title="We.Retail Journal Weather (Angular)"
         status="enabled"/>
 </jcr:root>

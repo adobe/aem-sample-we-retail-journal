@@ -1,55 +1,38 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouteReuseStrategy, RouterModule, Routes, UrlMatchResult, UrlSegment } from '@angular/router';
+import { AemPageDataResolver, AemPageRouteReuseStrategy } from "@adobe/cq-angular-editable-components";
 import { MainContentComponent } from "./components/main-content/main-content.component";
 
-import { environment } from '../../src/environments/environment';
-
-const CONTEXT_PATH = environment.CONTEXT_PATH;
+export function AemPageMatcher(url: UrlSegment[]): UrlMatchResult {
+  if (url.length) {
+    return (
+      {
+        consumed: url,
+        posParams: {
+          path: url[url.length - 1]
+        }
+      }
+    );
+  }
+}
 
 const routes: Routes = [
-    {
-      path: CONTEXT_PATH + 'content/we-retail-journal/angular/blog.html',
-      component: MainContentComponent,
-      data: {
-        path: '/' + CONTEXT_PATH + 'content/we-retail-journal/angular/blog'
-      }
-    },
-    {
-      path: CONTEXT_PATH +'content/we-retail-journal/angular/blog/aboutus.html',
-      component: MainContentComponent,
-      data: {
-        path: '/' + CONTEXT_PATH + 'content/we-retail-journal/angular/blog/aboutus'
-      }
-    },
-    {
-      path: CONTEXT_PATH +'content/we-retail-journal/angular/blog/weather.html',
-      component: MainContentComponent,
-      data: {
-        path: '/' + CONTEXT_PATH + 'content/we-retail-journal/angular/blog/weather'
-      }
-    },
-    {
-      path: CONTEXT_PATH +'content/we-retail-journal/angular/home.html',
-      component: MainContentComponent,
-      data: {
-        path: '/' + CONTEXT_PATH + 'content/we-retail-journal/angular/home'
-      }
-    },
-    {
-      path: CONTEXT_PATH +'content/we-retail-journal/angular.html',
-      redirectTo: '/' + CONTEXT_PATH + 'content/we-retail-journal/angular/home.html'
-    },
-    {
-      path: '',
-      redirectTo: '/' + CONTEXT_PATH + 'content/we-retail-journal/angular.html',
-      pathMatch: 'full'
+  {
+    matcher: AemPageMatcher,
+    component: MainContentComponent,
+    resolve: {
+      path: AemPageDataResolver
     }
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(
-      routes
-    )],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: [AemPageDataResolver, {
+    provide: RouteReuseStrategy,
+    useClass: AemPageRouteReuseStrategy
+  }]
 })
+
 export class AppRoutingModule {}
