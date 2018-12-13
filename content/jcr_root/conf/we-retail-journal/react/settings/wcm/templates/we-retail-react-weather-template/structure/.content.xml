@@ -17,7 +17,7 @@
                 <navigation
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="we-retail-journal/components/navigation"
-                    navigationRoot="/content/we-retail-journal/react">
+                    navigationRoot="/content/we-retail-journal/react/en">
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
                             jcr:primaryType="nt:unstructured"

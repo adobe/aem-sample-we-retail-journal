@@ -22,9 +22,9 @@
     }
   },
   "dependencies": {
-    "@adobe/cq-react-editable-components": "~1.0.3",
+    "@adobe/cq-react-editable-components": "~1.0.4",
     "@adobe/cq-spa-component-mapping": "~1.0.3",
-    "@adobe/cq-spa-page-model-manager": "~1.0.4",
+    "@adobe/cq-spa-page-model-manager": "~1.0.5",
     "babel-polyfill": "^6.26.0",
     "custom-event-polyfill": "^1.0.6",
     "fbemitter": "^2.1.1",
