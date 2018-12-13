@@ -23,7 +23,7 @@
   <parent>
     <groupId>com.adobe.cq.sample.spa</groupId>
     <artifactId>we-retail-journal</artifactId>
-    <version>1.1.6</version>
+    <version>1.1.7-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -32,7 +32,7 @@
   <!-- ====================================================================== -->
   <artifactId>we-retail-journal-angular-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.6</version>
+  <version>1.1.7-SNAPSHOT</version>
 
   <name>We.Retail Journal Angular App</name>
   <description>Angular App for the We.Retail Journal</description>
@@ -44,7 +44,7 @@
     <connection>scm:git:https://github.com/adobe/aem-sample-we-retail-journal.git</connection>
     <developerConnection>scm:git:git@github.com:adobe/aem-sample-we-retail-journal.git</developerConnection>
     <url>https://github.com/adobe/aem-sample-we-retail-journal/tree/master/angulal-app</url>
-    <tag>we-retail-journal-1.1.6</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
