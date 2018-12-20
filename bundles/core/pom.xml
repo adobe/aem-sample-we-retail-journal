@@ -23,7 +23,7 @@
     <parent>
         <groupId>com.adobe.cq.sample.spa</groupId>
         <artifactId>we-retail-journal</artifactId>
-        <version>1.1.7-SNAPSHOT</version>
+        <version>1.1.8</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -32,7 +32,7 @@
     <!-- ====================================================================== -->
     <artifactId>we-retail-journal-core</artifactId>
     <name>We.Retail Journal Core</name>
-    <version>1.1.7-SNAPSHOT</version>
+    <version>1.1.8</version>
     <description>Content package We.Retail Journal SPAs Core bundles</description>
     <packaging>bundle</packaging>
 
