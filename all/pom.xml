@@ -32,7 +32,7 @@
     <!-- ====================================================================== -->
     <artifactId>we-retail-journal-all</artifactId>
     <packaging>content-package</packaging>
-    <version>1.1.7-SNAPSHOT</version>
+    <version>1.1.8</version>
 
     <name>We.Retail Journal All-in-One</name>
     <description>All-in-One package for We.Retail Journal</description>
