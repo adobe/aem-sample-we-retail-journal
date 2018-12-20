@@ -1,3 +1,7 @@
+### *1.1.8* - 20 December 2018
+
+Downgrade com.fasterxml.jackson dependencies to match the AEM 6.4 dependencies for SP3
+
 ### *1.1.6* - 13 December 2018
 
 Public release, which provides:
