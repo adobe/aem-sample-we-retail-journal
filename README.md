@@ -96,3 +96,16 @@ Please note that
 
  * ``-pl/-projects`` option specifies the list of projects that you want to install
  * ``-am/-also-make`` options specifies that dependencies should also be built
+
+ ## Guidelines for SPA development in AEM
+
+Developing single page applications on AEM assumes that the front-end developer observes standard best practices when creating an SPA. If as a front end developer you follow these general best practices as well as few AEM-specific principles, your SPA will be functional with AEM and its content-authoring capabilities.
+
+* *Portability* - As with any components, the components should be built to be as portable as possible. The SPA should be built with portable and reusable components.
+* *AEM Drives Site Structure* - The front end developer creates components and owns their internal structure, but relies on AEM to define the content structure of the site.
+* *Dynamic Rendering* - All rendering should be dynamic.
+* *Dynamic Routing* - The SPA is responsible for the routing and AEM listens to it and fetches based on it. Any routing should be dynamic as well.
+
+If you keep these principles in mind as you develop your SPA, it will be as flexible and as future proof as possible while enabling all supported AEM authoring functionality. 
+
+For further details about SPA development on AEM including guideliens, walkthroughs, best practices and examples, see the [AEM Developer Documentation](https://adobe.com/go/aem-dev-spa).
