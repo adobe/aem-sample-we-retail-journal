@@ -17,7 +17,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:9000](http://localhost:9000) to view it in the browser.
 The AEM instance must allow the Cross-Origin Resource Sharing with your local server. See the following [documentation](https://helpx.adobe.com/experience-manager/kt/platform-repository/using/cors-security-article-understand.html) for more detail
 
 The page will reload if you make edits.<br>
