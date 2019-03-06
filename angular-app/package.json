@@ -28,7 +28,7 @@
   "dependencies": {
     "@adobe/cq-angular-editable-components": "~1.1.1",
     "@adobe/cq-spa-component-mapping": "~1.0.3",
-    "@adobe/cq-spa-page-model-manager": "~1.0.5",
+    "@adobe/cq-spa-page-model-manager": "~1.0.6",
     "@angular/animations": "^6.0.0",
     "@angular/common": "^6.0.0",
     "@angular/compiler": "^6.0.0",
