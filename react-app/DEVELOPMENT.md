@@ -3,7 +3,7 @@
 ```
 API_HOST=http://localhost:4502 npm run start
 ```
-This will open the local dev server on port 9000. You can navigate then to `http://localhost:9000/content/we-retail-journal/react/home.html`
+This will open the local dev server on port 9000. You can navigate then to `http://localhost:9000/content/we-retail-journal/react/en/home.html`
 where `API_HOST` points to your AEM instance.
 ### GOTCHA's - you should read this
 
@@ -65,7 +65,7 @@ b. Expected content of the page component HTL body template
 
 c. Command to start the local node server
 ```
-API_HOST=http://localhost:4502 npm run start:server
+API_HOST=http://localhost:4502 APP_ROOT_PATH=/content/we-retail-journal/react npm run start:server
 ```
 
 ### Configuring the _GetPreRenderedPageBody_ service
