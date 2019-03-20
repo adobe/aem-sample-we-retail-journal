@@ -9,7 +9,7 @@ Then:
 ```
 npm run start
 ```
-This will open the local dev server on port 4200. You can navigate then to http://localhost:4200/content/we-retail-journal/angular/home.html
+This will open the local dev server on port 4200. You can navigate then to http://localhost:4200/content/we-retail-journal/angular/en/home.html
 
 ### GOTCHA's - you should read this
 
