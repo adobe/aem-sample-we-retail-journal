@@ -18,7 +18,7 @@ package com.adobe.cq.sample.spa.ssr;
 
 import java.io.IOException;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
@@ -82,7 +82,7 @@ public class GetPreRenderedPageBody extends SlingSafeMethodsServlet {
     }
 
     @Override
-    protected void doGet(@Nonnull SlingHttpServletRequest request, @Nonnull SlingHttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(@NotNull SlingHttpServletRequest request, @NotNull SlingHttpServletResponse response) throws ServletException, IOException {
         try {
             // this should come from a config
             final String HOST = request.getPathInfo().toLowerCase().contains(ANGULAR_SELECTOR) ? host_angular : host_react;

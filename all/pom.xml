@@ -87,6 +87,11 @@
                     <subPackages>
                         <subPackage>
                             <groupId>${project.groupId}</groupId>
+                            <artifactId>we-retail-journal-apps</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                        <subPackage>
+                            <groupId>${project.groupId}</groupId>
                             <artifactId>we-retail-journal-content</artifactId>
                             <filter>true</filter>
                         </subPackage>
@@ -174,6 +179,13 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>we-retail-journal-ssr</artifactId>
             <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>we-retail-journal-apps</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
             <scope>provided</scope>
         </dependency>
         <dependency>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <rep:policy/>
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <jcr:content
+                        jcr:primaryType="nt:unstructured"
+                        mergeList="{Boolean}true"/>
+                    <default
+                        jcr:lastModified="{Date}2017-12-07T15:43:22.777+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="We.Retail Journal (React) Template Root Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/we-retail-journal/components/text,/apps/we-retail-journal/components/image,group:We.Retail Journal]">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="we-retail-journal/components/image"
+                                    type="Images"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </default>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+    <we-retail-journal jcr:primaryType="nt:unstructured">
+        <react jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <structure jcr:primaryType="nt:unstructured">
+                    <page jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:description="Default policy of the page"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="SPA Page"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            clientlibs="[wcm.foundation.components.page.responsive]"/>
+                    </page>
+                    <app jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:description="Default policy of the App"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="SPA App"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            clientlibs="[wcm.foundation.components.page.responsive]"
+                            isRoot="{Boolean}true"
+                            structureDepth="3"
+                            structurePatterns="(\/react\/)(?:(?!blog\/weather)(\/)?)"/>
+                    </app>
+                </structure>
+            </components>
+        </react>
+    </we-retail-journal>
+</jcr:root>

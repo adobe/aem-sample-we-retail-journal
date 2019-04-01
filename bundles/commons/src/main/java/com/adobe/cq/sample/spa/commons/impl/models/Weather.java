@@ -15,8 +15,8 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobe.cq.sample.spa.commons.impl.models;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.ValueMap;
@@ -76,7 +76,7 @@ public class Weather implements ComponentExporter {
      * @see ComponentExporter#getExportedType()
      * @since com.adobe.cq.sample.spa.commons.impl.models 1.0.0
      */
-    @Nonnull
+    @NotNull
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;

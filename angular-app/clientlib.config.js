@@ -18,7 +18,7 @@ module.exports = {
     context: __dirname,
 
     // path to the clientlib root folder (output)
-    clientLibRoot: "./../content/jcr_root/apps/we-retail-journal/angular/clientlibs",
+    clientLibRoot: "./../ui.apps/jcr_root/apps/we-retail-journal/angular/clientlibs",
 
     libs: {
         name: "we-retail-journal-angular",

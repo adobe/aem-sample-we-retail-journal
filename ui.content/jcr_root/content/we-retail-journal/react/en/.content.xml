@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:conf="/conf/we-retail-journal/react"
+        cq:lastModified="{Date}2018-03-20T22:58:03.000+01:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/we-retail-journal/react/settings/wcm/templates/we-retail-react-app-template"
+        cq:redirectTarget="/content/we-retail-journal/react/en/home"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="We.Retail Journal (English)"
+        sling:resourceType="we-retail-journal/react/components/structure/app">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid"/>
+        <image jcr:primaryType="nt:unstructured">
+            <file/>
+        </image>
+    </jcr:content>
+    <home/>
+    <blog/>
+</jcr:root>

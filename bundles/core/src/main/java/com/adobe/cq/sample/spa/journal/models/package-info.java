@@ -18,7 +18,7 @@
  * Provides interfaces and classes used to generate a JSON rendition for the WCM components.
  * Those interfaces are meant to be implemented by the component's Sling Models and rely on the Sling Model Exporter framework.
  */
-@Version("1.1.0")
+@Version("1.1.1")
 package com.adobe.cq.sample.spa.journal.models;
 
 import org.osgi.annotation.versioning.Version;

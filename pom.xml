@@ -37,7 +37,8 @@
         <module>bundles/ssr</module>
         <module>react-app</module>
         <module>angular-app</module>
-        <module>content</module>
+        <module>ui.apps</module>
+        <module>ui.content</module>
         <module>all</module>
     </modules>
 
@@ -269,7 +270,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.2</version>
+                    <version>3.8.0</version>
                 </plugin>
                 <!-- Apache Felix SCR Plugin -->
                 <plugin>
@@ -579,9 +580,15 @@
         <dependencies>
             <!-- Commons -->
             <dependency>
-                <groupId>com.google.code.findbugs</groupId>
-                <artifactId>jsr305</artifactId>
-                <version>2.0.0</version>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>17.0.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -723,7 +730,7 @@
             <dependency>
                 <groupId>com.adobe.cq</groupId>
                 <artifactId>core.wcm.components.core</artifactId>
-                <version>2.2.2</version>
+                <version>2.3.2</version>
                 <scope>provided</scope>
             </dependency>
 
