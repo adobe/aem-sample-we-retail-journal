@@ -9,6 +9,7 @@
     "build:production": "ng build --prod --build-optimizer=false && clientlib",
     "start": "ng serve",
     "test": "ng test --watch=false",
+    "test:cm": "ng test --browsers=Chromium --watch=false",
     "ci": "ng test --karma-config=src/karma-ci.conf.js",
     "test:ci": "scripts/ci/test.sh",
     "test:debug": "ng test --watch=true",

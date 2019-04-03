@@ -128,7 +128,9 @@
     <profile>
       <id>local</id>
       <activation>
-        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>!env.CM_BUILD</name>
+        </property>
       </activation>
       <build>
         <plugins>
@@ -139,6 +141,37 @@
             <executions>
               <execution>
                 <id>npm run test</id>
+                <phase>test</phase>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <configuration>
+                  <arguments>run test</arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- Profile to run on Cloud Manager -->
+    <profile>
+      <id>CM</id>
+      <activation>
+        <property>
+          <name>env.CM_BUILD</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>${frontend-maven-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>npm run test:cm</id>
                 <phase>test</phase>
                 <goals>
                   <goal>npm</goal>
@@ -186,66 +219,4 @@
       </build>
     </profile>
   </profiles>
-
-  <!--<profiles>
-      <profile>
-          <id>npmLinkDeps</id>
-          <activation>
-              <activeByDefault>false</activeByDefault>
-          </activation>
-          <build>
-              <plugins>
-                  &lt;!&ndash; Run NPM to generate the client library &ndash;&gt;
-                  <plugin>
-                      <groupId>org.codehaus.mojo</groupId>
-                      <artifactId>exec-maven-plugin</artifactId>
-                      <version>1.6.0</version>
-                      <executions>
-                          <execution>
-                              <id>npm install</id>
-                              <goals>
-                                  <goal>exec</goal>
-                              </goals>
-                              <phase>initialize</phase>
-                              <configuration>
-                                  <arguments>
-                                      <argument>run</argument>
-                                      <argument>install:link-deps</argument>
-                                  </arguments>
-                              </configuration>
-                          </execution>
-                          <execution>
-                              <id>npm run build</id>
-                              <goals>
-                                  <goal>exec</goal>
-                              </goals>
-                              <phase>generate-resources</phase>
-                              <configuration>
-                                  <executable>npm</executable>
-                                  <arguments>
-                                      <argument>run</argument>
-                                      <argument>build</argument>
-                                  </arguments>
-                              </configuration>
-                          </execution>
-                      </executions>
-                  </plugin>
-
-                  <plugin>
-                      <groupId>org.apache.rat</groupId>
-                      <artifactId>apache-rat-plugin</artifactId>
-                      <configuration>
-                          <includes>
-                              <include>src/**/*</include>
-                          </includes>
-                          <excludes combine.children="append">
-                              &lt;!&ndash; exclude typekit fonts &ndash;&gt;
-                              <exclude>src/fonts.css</exclude>
-                          </excludes>
-                      </configuration>
-                  </plugin>
-              </plugins>
-          </build>
-      </profile>
-  </profiles>-->
 </project>

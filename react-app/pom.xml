@@ -120,62 +120,63 @@
     </build>
 
     <profiles>
+        <!-- Profile to run locally -->
         <profile>
-            <id>npmLinkDeps</id>
+            <id>local</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>!env.CM_BUILD</name>
+                </property>
             </activation>
             <build>
                 <plugins>
-                    <!-- Run NPM to generate the client library -->
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.6.0</version>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>${frontend-maven-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>npm install</id>
+                                <id>npm run test</id>
+                                <phase>test</phase>
                                 <goals>
-                                    <goal>exec</goal>
+                                    <goal>npm</goal>
                                 </goals>
-                                <phase>initialize</phase>
                                 <configuration>
-                                    <executable>npm</executable>
-                                    <arguments>
-                                        <argument>run</argument>
-                                        <argument>install:link-deps</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>npm run build</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <executable>npm</executable>
-                                    <arguments>
-                                        <argument>run</argument>
-                                        <argument>build</argument>
-                                    </arguments>
+                                    <arguments>run test</arguments>
                                 </configuration>
                             </execution>
                         </executions>
                     </plugin>
+                </plugins>
+            </build>
+        </profile>
 
+        <!-- Profile to run on Cloud Manager -->
+        <profile>
+            <id>CM</id>
+            <activation>
+                <property>
+                    <name>env.CM_BUILD</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
                     <plugin>
-                        <groupId>org.apache.rat</groupId>
-                        <artifactId>apache-rat-plugin</artifactId>
-                        <configuration>
-                            <includes>
-                                <include>src/**/*</include>
-                            </includes>
-                            <excludes combine.children="append">
-                                <!-- exclude typekit fonts -->
-                                <exclude>src/fonts.css</exclude>
-                            </excludes>
-                        </configuration>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>${frontend-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>npm run test:cm</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>run test</arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
