@@ -1,3 +1,8 @@
+### *1.2.0* - 5 April 2019
+
+* **NEW FEATURE** Template Editor
+  * Give access to the list of Allowed Components from the ResponsiveGrid component
+
 ### *1.1.8* - 20 December 2018
 
 Downgrade com.fasterxml.jackson dependencies to match the AEM 6.4 dependencies for SP3
