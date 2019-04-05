@@ -128,9 +128,7 @@
     <profile>
       <id>local</id>
       <activation>
-        <property>
-          <name>!env.CM_BUILD</name>
-        </property>
+        <activeByDefault>true</activeByDefault>
       </activation>
       <build>
         <plugins>
@@ -141,37 +139,6 @@
             <executions>
               <execution>
                 <id>npm run test</id>
-                <phase>test</phase>
-                <goals>
-                  <goal>npm</goal>
-                </goals>
-                <configuration>
-                  <arguments>run test</arguments>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!-- Profile to run on Cloud Manager -->
-    <profile>
-      <id>CM</id>
-      <activation>
-        <property>
-          <name>env.CM_BUILD</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>com.github.eirslett</groupId>
-            <artifactId>frontend-maven-plugin</artifactId>
-            <version>${frontend-maven-plugin.version}</version>
-            <executions>
-              <execution>
-                <id>npm run test:cm</id>
                 <phase>test</phase>
                 <goals>
                   <goal>npm</goal>
@@ -211,6 +178,38 @@
                 </goals>
                 <configuration>
                   <arguments>run test:ci</arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>cmBuild</id>
+      <activation>
+        <property>
+          <name>env.CM_BUILD</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.6.0</version>
+            <executions>
+              <execution>
+                <id>install-chrome</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>/bin/bash</executable>
+                  <arguments>
+                    <argument>scripts/cm/install-chrome.sh</argument>
+                  </arguments>
                 </configuration>
               </execution>
             </executions>

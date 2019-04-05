@@ -89,10 +89,31 @@ module.exports = function(config) {
             Chrome_with_debugging: {
                 base: 'Chrome',
                 chromeDataDir: path.resolve(__dirname, '.chrome')
+            },
+            chrome_wd: {
+                base: 'WebDriver',
+                config: {
+                    hostname: 'localhost',
+                    port: 4444
+                },
+                browserName: 'chrome',
+                name: 'Karma',
+                pseudoActivityInterval: 30000
+            },
+            firefox_wd: {
+                base: 'WebDriver',
+                config: {
+                    hostname: 'localhost',
+                    port: 4444
+                },
+                browserName: 'firefox',
+                name: 'Karma',
+                pseudoActivityInterval: 30000
             }
         },
 
         // if browser does not capture in given timeout [ms], kill it
-        captureTimeout: 60000
+        captureTimeout: 60000,
+        singleRun: true
     });
 };
