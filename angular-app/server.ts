@@ -22,7 +22,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4200;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 const APP_ROOT_PATH = environment.APP_ROOT_PATH;
 
@@ -51,7 +51,7 @@ app.get('/api/*', (req, res) => {
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
 
 // All regular routes use the Universal engine
-app.get(`${APP_ROOT_PATH}*.html`, (req, res, next) => {
+app.get([`${APP_ROOT_PATH}*.html`, '/conf/we-retail-journal/angular/settings/wcm/templates*.html'], (req, res, next) => {
   if (!environment.APP_ROOT_PATH) {
     console.error("You have not set any root path for app. Be sure you set the environment variable APP_ROOT_PATH before running the command");
     process.exit(1);
@@ -75,7 +75,7 @@ app.get(`${APP_ROOT_PATH}*.html`, (req, res, next) => {
   });
 });
 
-app.post(`${APP_ROOT_PATH}*.html`, (req, res, next) => {
+app.post([`${APP_ROOT_PATH}*.html`, '/conf/we-retail-journal/angular/settings/wcm/templates*.html'], (req, res, next) => {
   const pageModelRootPath = req.headers['page-model-root-url'] || APP_ROOT_PATH;
   let model = req.body;
   ModelManager.destroy();

@@ -35,7 +35,11 @@ Most probably the images are having relative paths, and because we are not on AE
 Quick fix would be to force the AEM absolute path on the images from the image component
 
 ## Running the local NODE.js Server Side Rendering.  
-In order to get the server side rendering to work run the following commands
+First, Set the API_HOST configuration in [src/environments/environment.ts](https://github.com/adobe/aem-sample-we-retail-journal/blob/master/angular-app/src/environments/environment.ts#L7) pointing to your AEM instance:
+
+```API_HOST: "http://localhost:4502",```
+
+Now, In order to get the server side rendering to work run the following commands
 ```
 npm run build:ssr
 ```
@@ -44,7 +48,7 @@ then
 npm run serve:ssr
 ```
 
-This will open a server on port 4000 so you can navigate to http://localhost:4000/content/we-retail-journal/angular/home.html to see the running example
+This will open a server on port 4200 so you can navigate to http://localhost:4200/content/we-retail-journal/angular/en/home.html to see the running example
 
 ### SSR Setup
 

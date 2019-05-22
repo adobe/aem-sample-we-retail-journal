@@ -70,7 +70,7 @@ function renderModelToHTMLString(model, pagePath, requestUrl, requestPath, pageM
         </script>`;
 }
 
-exapp.get('/content/we-retail-journal/react*.html', (req, res, next) => {
+exapp.get(['/content/we-retail-journal/react*.html', '/conf/we-retail-journal/react/settings/wcm/templates*.html'], (req, res, next) => {
     if (!process.env.API_HOST) {
         console.error("You have not set any api host. Be sure you set the environment variable API_HOST before running the command");
         process.exit(1);
@@ -92,7 +92,7 @@ exapp.get('/content/we-retail-journal/react*.html', (req, res, next) => {
     });
 });
  
-exapp.post("/content/we-retail-journal/react*.html", (req, res, next) => {
+exapp.post(['/content/we-retail-journal/react*.html', '/conf/we-retail-journal/react/settings/wcm/templates*.html'], (req, res, next) => {
     const wcmMode = req.headers['wcm-mode'];
     const isInEditor = wcmMode && wcmMode === 'EDIT' || wcmMode === 'PREVIEW';
     const pageModelRootPath = req.headers['page-model-root-url'] || APP_ROOT_PATH;
