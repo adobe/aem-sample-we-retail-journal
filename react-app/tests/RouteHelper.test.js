@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import { getVerifyObserver } from './Utils';
 import { RouteListener, withRoute } from '../src/RouteHelper';
 import { ModelManager } from '@adobe/cq-spa-page-model-manager';
@@ -70,6 +70,30 @@ describe('RouterHelper ->', () => {
 
             let WrappedComponent = withRoute(RouteContent);
             ReactDOM.render(<BrowserRouter><WrappedComponent cqModel={cqModel}/></BrowserRouter>, rootNode);
+        });
+
+        it('should render page with extension', () => {
+            let WrappedComponent = withRoute(RouteContent, 'extension');
+            ReactDOM.render(
+                <MemoryRouter initialEntries={[CUSTOM_ROUTE_PATH + '.extension']}>
+                    <WrappedComponent cqPath={CUSTOM_ROUTE_PATH} />
+                </MemoryRouter>,
+                rootNode
+            );
+
+            expect(rootNode.querySelector('.' + ROUTE_CONTENT_CLASS_NAME)).to.not.be.null;
+        });
+
+        it('should render page if extension is not provided', () => {
+            let WrappedComponent = withRoute(RouteContent);
+            ReactDOM.render(
+                <MemoryRouter initialEntries={[CUSTOM_ROUTE_PATH]}>
+                    <WrappedComponent cqPath={CUSTOM_ROUTE_PATH}/>
+                </MemoryRouter>,
+                rootNode
+            );
+
+            expect(rootNode.querySelector('.' + ROUTE_CONTENT_CLASS_NAME)).to.not.be.null;
         });
     });
 });
