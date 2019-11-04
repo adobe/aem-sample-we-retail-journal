@@ -38,8 +38,8 @@ export const withRoute = (WrappedComponent, extension) => {
 
             extension = extension || 'html';
 
-            // Context path + route path + extension
-            return <Route key={ routePath } path={ '(.*)' + routePath + '.' + extension } render={ (routeProps) => {
+            // Context path + route path + optional extension
+            return <Route key={ routePath } exact path={ '(.*)' + routePath + '(.' + extension + ')?'} render={ (routeProps) => {
                 return <WrappedComponent {...this.props} {...routeProps}/>;
             } } />
         }
