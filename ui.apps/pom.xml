@@ -188,7 +188,7 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <targetURL>${quickstart.url}/crx/packmgr/service.jsp</targetURL>
+                                    <targetURL>${quickstart.publish.url}/crx/packmgr/service.jsp</targetURL>
                                     <failOnError>true</failOnError>
                                 </configuration>
                             </execution>
