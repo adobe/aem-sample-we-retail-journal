@@ -33,7 +33,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [ BrowserModule.withServerTransition({ appId: 'we-retail-sample-angular' }),
     SpaAngularEditableComponentsModule,
     AngularWeatherWidgetModule.forRoot({
-      key: "***REMOVED***",
+      key: "",
       name: WeatherApiName.OPEN_WEATHER_MAP,
       baseUrl: 'http://api.openweathermap.org/data/2.5'
     }),

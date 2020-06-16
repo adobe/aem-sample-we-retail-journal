@@ -553,7 +553,7 @@ var AppModule = /** @class */ (function () {
             imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"].withServerTransition({ appId: 'we-retail-sample-angular' }),
                 _adobe_cq_angular_editable_components__WEBPACK_IMPORTED_MODULE_6__["SpaAngularEditableComponentsModule"],
                 angular_weather_widget__WEBPACK_IMPORTED_MODULE_4__["AngularWeatherWidgetModule"].forRoot({
-                    key: "***REMOVED***",
+                    key: "",
                     name: angular_weather_widget__WEBPACK_IMPORTED_MODULE_4__["WeatherApiName"].OPEN_WEATHER_MAP,
                     baseUrl: 'http://api.openweathermap.org/data/2.5'
                 }),
