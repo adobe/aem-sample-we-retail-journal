@@ -22,7 +22,7 @@ import { AngularWeatherWidgetModule, WeatherApiName } from 'angular-weather-widg
 describe('WeatherComponent', () => {
   let component: WeatherComponent;
   let fixture: ComponentFixture<WeatherComponent>;
-  const apiKey = "***REMOVED***";
+  const apiKey = "1234567890";
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

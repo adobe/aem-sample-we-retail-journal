@@ -53,6 +53,7 @@
                                             <apiKey
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="To get an API key request go to https://openweathermap.org"
                                                 fieldLabel="Api Key"
                                                 name="./apiKey"
                                                 required="{Boolean}true"/>
